@@ -3,7 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.34031.81
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "ProjectV6", "ProjectV6", "{6AEB68B9-79C2-40F3-B7A5-ECEEDE908384}"
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Project.V6", "Project.V6", "{6AEB68B9-79C2-40F3-B7A5-ECEEDE908384}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Tyuiu.MedvedevKA.Sprint7.Project.V6", "Tyuiu.MedvedevKA.Sprint7.Project.V6\Tyuiu.MedvedevKA.Sprint7.Project.V6.csproj", "{4A540049-76E2-44C0-8A12-7392544D7F2F}"
 EndProject
