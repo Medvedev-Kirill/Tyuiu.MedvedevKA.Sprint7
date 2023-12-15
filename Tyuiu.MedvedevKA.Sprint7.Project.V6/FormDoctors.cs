@@ -10,17 +10,11 @@ using System.Windows.Forms;
 
 namespace Tyuiu.MedvedevKA.Sprint7.Project.V6
 {
-    public partial class FormMain : Form
+    public partial class FormDoctors : Form
     {
-        public FormMain()
+        public FormDoctors()
         {
             InitializeComponent();
-        }
-
-        private void buttonAboutProgram_MKA_Click(object sender, EventArgs e)
-        {
-            FormAbout formAbout = new FormAbout();
-            formAbout.ShowDialog();
         }
     }
 }
