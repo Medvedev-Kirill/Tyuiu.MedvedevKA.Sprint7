@@ -22,5 +22,11 @@ namespace Tyuiu.MedvedevKA.Sprint7.Project.V6
             FormAbout formAbout = new FormAbout();
             formAbout.ShowDialog();
         }
+
+        private void buttonPatients_MKA_Click(object sender, EventArgs e)
+        {
+            FormPatients formPatients = new FormPatients();
+            formPatients.ShowDialog();
+        }
     }
 }

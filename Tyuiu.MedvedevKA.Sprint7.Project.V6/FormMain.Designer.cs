@@ -39,7 +39,7 @@ namespace Tyuiu.MedvedevKA.Sprint7.Project.V6
             this.panelDoctors_MKA = new System.Windows.Forms.Panel();
             this.buttonDoctors_MKA = new System.Windows.Forms.Button();
             this.panelPatients_MKA = new System.Windows.Forms.Panel();
-            this.splitter = new System.Windows.Forms.Splitter();
+            this.splitter1 = new System.Windows.Forms.Splitter();
             this.panelBot_MKA.SuspendLayout();
             this.panelDoctors_MKA.SuspendLayout();
             this.panelPatients_MKA.SuspendLayout();
@@ -63,7 +63,7 @@ namespace Tyuiu.MedvedevKA.Sprint7.Project.V6
             this.buttonInfo_MKA.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.buttonInfo_MKA.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.buttonInfo_MKA.Image = ((System.Drawing.Image)(resources.GetObject("buttonInfo_MKA.Image")));
-            this.buttonInfo_MKA.Location = new System.Drawing.Point(737, 2);
+            this.buttonInfo_MKA.Location = new System.Drawing.Point(446, 2);
             this.buttonInfo_MKA.Name = "buttonInfo_MKA";
             this.buttonInfo_MKA.Size = new System.Drawing.Size(60, 55);
             this.buttonInfo_MKA.TabIndex = 1;
@@ -75,9 +75,9 @@ namespace Tyuiu.MedvedevKA.Sprint7.Project.V6
             this.panelBot_MKA.Controls.Add(this.buttonAboutProgram_MKA);
             this.panelBot_MKA.Controls.Add(this.buttonInfo_MKA);
             this.panelBot_MKA.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.panelBot_MKA.Location = new System.Drawing.Point(0, 390);
+            this.panelBot_MKA.Location = new System.Drawing.Point(0, 271);
             this.panelBot_MKA.Name = "panelBot_MKA";
-            this.panelBot_MKA.Size = new System.Drawing.Size(800, 60);
+            this.panelBot_MKA.Size = new System.Drawing.Size(509, 60);
             this.panelBot_MKA.TabIndex = 2;
             // 
             // toolTip_MKA
@@ -99,14 +99,15 @@ namespace Tyuiu.MedvedevKA.Sprint7.Project.V6
             this.buttonPatients_MKA.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.toolTip_MKA.SetToolTip(this.buttonPatients_MKA, "Информация о пациентах");
             this.buttonPatients_MKA.UseVisualStyleBackColor = false;
+            this.buttonPatients_MKA.Click += new System.EventHandler(this.buttonPatients_MKA_Click);
             // 
             // panelDoctors_MKA
             // 
             this.panelDoctors_MKA.Controls.Add(this.buttonDoctors_MKA);
             this.panelDoctors_MKA.Dock = System.Windows.Forms.DockStyle.Right;
-            this.panelDoctors_MKA.Location = new System.Drawing.Point(383, 0);
+            this.panelDoctors_MKA.Location = new System.Drawing.Point(295, 0);
             this.panelDoctors_MKA.Name = "panelDoctors_MKA";
-            this.panelDoctors_MKA.Size = new System.Drawing.Size(417, 390);
+            this.panelDoctors_MKA.Size = new System.Drawing.Size(214, 271);
             this.panelDoctors_MKA.TabIndex = 5;
             this.toolTip_MKA.SetToolTip(this.panelDoctors_MKA, "Информация о докторах\r\n");
             // 
@@ -115,7 +116,7 @@ namespace Tyuiu.MedvedevKA.Sprint7.Project.V6
             this.buttonDoctors_MKA.BackColor = System.Drawing.SystemColors.HighlightText;
             this.buttonDoctors_MKA.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Underline, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.buttonDoctors_MKA.Image = ((System.Drawing.Image)(resources.GetObject("buttonDoctors_MKA.Image")));
-            this.buttonDoctors_MKA.Location = new System.Drawing.Point(205, 12);
+            this.buttonDoctors_MKA.Location = new System.Drawing.Point(3, 12);
             this.buttonDoctors_MKA.Name = "buttonDoctors_MKA";
             this.buttonDoctors_MKA.Size = new System.Drawing.Size(200, 250);
             this.buttonDoctors_MKA.TabIndex = 0;
@@ -131,23 +132,23 @@ namespace Tyuiu.MedvedevKA.Sprint7.Project.V6
             this.panelPatients_MKA.Location = new System.Drawing.Point(0, 0);
             this.panelPatients_MKA.Margin = new System.Windows.Forms.Padding(5);
             this.panelPatients_MKA.Name = "panelPatients_MKA";
-            this.panelPatients_MKA.Size = new System.Drawing.Size(367, 390);
+            this.panelPatients_MKA.Size = new System.Drawing.Size(217, 271);
             this.panelPatients_MKA.TabIndex = 4;
             // 
-            // splitter
+            // splitter1
             // 
-            this.splitter.Location = new System.Drawing.Point(367, 0);
-            this.splitter.Name = "splitter";
-            this.splitter.Size = new System.Drawing.Size(10, 390);
-            this.splitter.TabIndex = 6;
-            this.splitter.TabStop = false;
+            this.splitter1.Location = new System.Drawing.Point(217, 0);
+            this.splitter1.Name = "splitter1";
+            this.splitter1.Size = new System.Drawing.Size(72, 271);
+            this.splitter1.TabIndex = 6;
+            this.splitter1.TabStop = false;
             // 
             // FormMain
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Controls.Add(this.splitter);
+            this.ClientSize = new System.Drawing.Size(509, 331);
+            this.Controls.Add(this.splitter1);
             this.Controls.Add(this.panelDoctors_MKA);
             this.Controls.Add(this.panelPatients_MKA);
             this.Controls.Add(this.panelBot_MKA);
@@ -169,8 +170,8 @@ namespace Tyuiu.MedvedevKA.Sprint7.Project.V6
         private System.Windows.Forms.Button buttonPatients_MKA;
         private System.Windows.Forms.Panel panelPatients_MKA;
         private System.Windows.Forms.Panel panelDoctors_MKA;
-        private System.Windows.Forms.Splitter splitter;
         private System.Windows.Forms.Button buttonDoctors_MKA;
+        private System.Windows.Forms.Splitter splitter1;
     }
 }
 
