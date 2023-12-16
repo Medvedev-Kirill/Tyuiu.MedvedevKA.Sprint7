@@ -20,38 +20,37 @@ namespace Tyuiu.MedvedevKA.Sprint7.Project.V6
             openFileDialog_MKA.Filter = "Значения, разделенные запятыми(*.csv)|*.csv|Все файлы(*.*)|*.*";
             saveFileDialog_MKA.Filter = "Значения, разделенные запятыми(*.csv)|*.csv|Все файлы(*.*)|*.*";
         }
-
+        
         private void buttonOpenFile_MKA_Click(object sender, EventArgs e)
         {
-            using (StreamReader reader = new StreamReader(@"C:\Users\1\source\repos\Tyuiu.MedvedevKA.Sprint7\Tyuiu.MedvedevKA.Sprint7.Project.V6\bin\Debug\Patients.csv"))
+            string filePath = @"C:\Users\1\source\repos\Tyuiu.MedvedevKA.Sprint7\Tyuiu.MedvedevKA.Sprint7.Project.V6\bin\Debug\Patients.csv";
+
+            // Проверяем, существует ли файл
+            if (File.Exists(filePath))
             {
-                // Читаем первую строку с заголовками столбцов
-                string header = reader.ReadLine();
+                // Читаем все строки из файла
+                string[] lines = File.ReadAllLines(filePath);
 
-                // Разделяем заголовки столбцов по символу табуляции или запятой
-                string[] columns = header.Split('\t', ',');
+                // Устанавливаем количество строк и столбцов в DataGridView
+                dataGridViewOriginal_MKA.RowCount = lines.Length;
+                dataGridViewOriginal_MKA.ColumnCount = 5;
 
-                // Добавляем столбцы в DataGridView
-                foreach (string column in columns)
+                // Заполняем DataGridView данными из файла
+                for (int i = 0; i < lines.Length; i++)
                 {
-                    dataGridViewOriginal_MKA.Columns.Add(column, column);
-                }
+                    string[] values = lines[i].Split(',');
 
-                // Читаем остальные строки с данными
-                while (!reader.EndOfStream)
-                {
-                    // Читаем строку
-                    string line = reader.ReadLine();
-
-                    // Разделяем строки по символу табуляции или запятой
-                    string[] data = line.Split('\t', ',');
-
-                    // Добавляем строку в DataGridView
-                    dataGridViewOriginal_MKA.Rows.Add(data);
+                    for (int j = 0; j < values.Length; j++)
+                    {
+                        dataGridViewOriginal_MKA[j, i].Value = values[j];
+                    }
                 }
             }
-
+            else
+            {
+                MessageBox.Show("Файл не найден!");
+            }
         }
-       
+
     }
 }

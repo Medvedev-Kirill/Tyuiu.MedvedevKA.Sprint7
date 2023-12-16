@@ -57,7 +57,7 @@ namespace Tyuiu.MedvedevKA.Sprint7.Project.V6.Lib
         public string Note { get; set; }
     }
 
-   public class DoctorsRepository
+    public class DoctorsRepository
     {
         private const string DoctorsFilePath = "Doctors.csv";
         public List<Doctors> GetAllDoctors()
@@ -88,5 +88,5 @@ namespace Tyuiu.MedvedevKA.Sprint7.Project.V6.Lib
             return doctors;
         }
     }
-       
+
 }
