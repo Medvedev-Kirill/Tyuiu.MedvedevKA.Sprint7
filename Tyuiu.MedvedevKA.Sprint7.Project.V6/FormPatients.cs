@@ -17,36 +17,107 @@ namespace Tyuiu.MedvedevKA.Sprint7.Project.V6
         public FormPatients()
         {
             InitializeComponent();
-            openFileDialog_MKA.Filter = "Значения, разделенные запятыми(*.csv)|*.csv|Все файлы(*.*)|*.*";
-            saveFileDialog_MKA.Filter = "Значения, разделенные запятыми(*.csv)|*.csv|Все файлы(*.*)|*.*";
         }
+        static string openFile;
+        static int rows;
+        static int columns;
+        static string[,] matrix;
+        DataService ds = new DataService();
 
         private void buttonOpenFile_MKA_Click(object sender, EventArgs e)
         {
-            string filePath = @"C:\Users\1\source\repos\Tyuiu.MedvedevKA.Sprint7\Tyuiu.MedvedevKA.Sprint7.Project.V6\bin\Debug\Patients.csv";
-            string[] lines = File.ReadAllLines(filePath);
-
-            // Устанавливаем количество строк и столбцов в DataGridView
-            dataGridViewOriginal_MKA.RowCount = 11; // Включая заголовки
-            dataGridViewOriginal_MKA.ColumnCount = 5;
-
-            // Устанавливаем названия столбцов
-            dataGridViewOriginal_MKA.Columns[0].Name = "Номер";
-            dataGridViewOriginal_MKA.Columns[1].Name = "Фамилия";
-            dataGridViewOriginal_MKA.Columns[2].Name = "Имя";
-            dataGridViewOriginal_MKA.Columns[3].Name = "Отчество";
-            dataGridViewOriginal_MKA.Columns[4].Name = "Дата рождения пациента";
-
-            // Заполняем ячейки DataGridView данными из файла
-            for (int i = 0; i < lines.Length; i++)
+            try
             {
-                string[] data = lines[i].Split(',');
-                for (int j = 0; j < data.Length; j++)
+                openFileDialog_MKA.ShowDialog();
+                openFile = openFileDialog_MKA.FileName;
+
+                matrix = ds.GetMatrix(openFile);
+                rows = matrix.GetLength(0);
+                columns = matrix.GetLength(1);
+                dataGridViewPactients_MKA.RowCount = rows;
+                dataGridViewPactients_MKA.ColumnCount = columns;
+                for (int i = 0; i < rows; i++)
                 {
-                    dataGridViewOriginal_MKA.Rows[i].Cells[j].Value = data[j];
+                    for (int j = 0; j < columns; j++)
+                    {
+                        dataGridViewPactients_MKA.Rows[i].Cells[j].Value = matrix[i, j];
+                        dataGridViewPactients_MKA.Rows[i].Cells[j].Selected = false;
+                    }
                 }
+                dataGridViewPactients_MKA.AutoResizeColumns();
+            }
+            catch
+            {
+                MessageBox.Show("Проблема с открфтием файла", "Ошибка", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+        private void buttonDelete_MKA_Click(object sender, EventArgs e)
+        {
+            dataGridViewPactients_MKA.Rows.Clear();
+        }
+
+        private void buttonSaveFile_MKA_Click(object sender, EventArgs e)
+        {
+            saveFileDialog_MKA.FileName = "OutPutFilePatients.csv";
+            saveFileDialog_MKA.InitialDirectory = Directory.GetCurrentDirectory();
+            saveFileDialog_MKA.ShowDialog();
+
+            string path = saveFileDialog_MKA.FileName;
+
+            FileInfo fileInfo = new FileInfo(path);
+            bool fileExists = fileInfo.Exists;
+
+            if (fileExists)
+            {
+                File.Delete(path);
+            }
+
+            int rows = dataGridViewPactients_MKA.RowCount;
+            int columns = dataGridViewPactients_MKA.ColumnCount;
+
+            string str = "";
+
+            for (int i = 0; i < rows; i++)
+            {
+                for (int j = 0; j < columns; j++)
+                {
+                    if (j != columns - 1)
+                    {
+                        str = str + dataGridViewPactients_MKA.Rows[i].Cells[j].Value + ";";
+                    }
+                    else
+                    {
+                        str = str + dataGridViewPactients_MKA.Rows[i].Cells[j].Value;
+                    }
+                }
+                File.AppendAllText(path, str + Environment.NewLine);
+                str = "";
+            }
+        }
+
+        private void buttonFiltre_MKA_Click(object sender, EventArgs e)
+        {
+            string filterValue = textBoxParametr_MKA.Text.ToLower();
+
+            for (int i = 0; i < dataGridViewPactients_MKA.Rows.Count - 1; i++)
+            {
+                bool rowShouldBeVisible = false;
+
+                for (int j = 0; j < dataGridViewPactients_MKA.Columns.Count; j++)
+                {
+                    var cellValue = dataGridViewPactients_MKA.Rows[i].Cells[j].Value?.ToString().ToLower();
+
+                    if (cellValue != null && cellValue.Contains(filterValue))
+                    {
+                        rowShouldBeVisible = true;
+                        break;
+                    }
+                }
+                dataGridViewPactients_MKA.Rows[i].Visible = rowShouldBeVisible;
             }
         }
     }
 }
+
 

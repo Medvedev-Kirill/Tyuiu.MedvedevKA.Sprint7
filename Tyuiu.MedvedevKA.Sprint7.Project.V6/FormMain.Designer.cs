@@ -124,6 +124,7 @@ namespace Tyuiu.MedvedevKA.Sprint7.Project.V6
             this.buttonDoctors_MKA.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.toolTip_MKA.SetToolTip(this.buttonDoctors_MKA, "Информация о докторах");
             this.buttonDoctors_MKA.UseVisualStyleBackColor = false;
+            this.buttonDoctors_MKA.Click += new System.EventHandler(this.buttonDoctors_MKA_Click);
             // 
             // panelPatients_MKA
             // 

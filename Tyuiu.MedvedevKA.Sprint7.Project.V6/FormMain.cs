@@ -28,5 +28,11 @@ namespace Tyuiu.MedvedevKA.Sprint7.Project.V6
             FormPatients formPatients = new FormPatients();
             formPatients.ShowDialog();
         }
+
+        private void buttonDoctors_MKA_Click(object sender, EventArgs e)
+        {
+            FormDoctors formDoctors = new FormDoctors();
+            formDoctors.ShowDialog();
+        }
     }
 }
