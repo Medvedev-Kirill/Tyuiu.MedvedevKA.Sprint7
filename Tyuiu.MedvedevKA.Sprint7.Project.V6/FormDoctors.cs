@@ -47,7 +47,7 @@ namespace Tyuiu.MedvedevKA.Sprint7.Project.V6
             }
             catch
             {
-                MessageBox.Show("Проблема с открфтием файла", "Ошибка", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("Проблема с открытием файла", "Ошибка", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 
@@ -97,24 +97,143 @@ namespace Tyuiu.MedvedevKA.Sprint7.Project.V6
 
         private void buttonFiltre_MKA_Click(object sender, EventArgs e)
         {
-            string filterValue = textBoxParametr_MKA.Text.ToLower();
-
-            for (int i = 0; i < dataGridViewDoctors_MKA.Rows.Count - 1; i++)
+            for (int i = 0; i < dataGridViewDoctors_MKA.RowCount - 1; i++)
             {
-                bool rowShouldBeVisible = false;
-
-                for (int j = 0; j < dataGridViewDoctors_MKA.Columns.Count; j++)
+                string filterValue = textBoxParametr_MKA.Text.ToLower();
+                dataGridViewDoctors_MKA.Rows[i].Visible = false;
+                for (int j = 0; j < dataGridViewDoctors_MKA.ColumnCount; j++)
                 {
-                    var cellValue = dataGridViewDoctors_MKA.Rows[i].Cells[j].Value?.ToString().ToLower();
-
-                    if (cellValue != null && cellValue.Contains(filterValue))
+                    var cellValue = dataGridViewDoctors_MKA.Rows[i].Cells[j].Value?.ToString()?.ToLower();
+                    if (cellValue != null && cellValue == filterValue)
                     {
-                        rowShouldBeVisible = true;
+                        dataGridViewDoctors_MKA.Rows[i].Visible = true;
                         break;
                     }
                 }
-                dataGridViewDoctors_MKA.Rows[i].Visible = rowShouldBeVisible;
+                for (int c = 0; c < columns; c++)
+                {
+                    dataGridViewDoctors_MKA.Rows[matrix.GetLength(0) - 1].Cells[c].Value = "";
+                }
             }
+        }
+
+        private void buttonSearch_MKA_Click(object sender, EventArgs e)
+        {
+            string serchValue = textBoxSearch_MKA.Text.ToLower();
+            for (int i = 0; i < dataGridViewDoctors_MKA.RowCount; i++)
+            {
+                dataGridViewDoctors_MKA.Rows[i].Selected = false;
+                for (int j = 0; j < dataGridViewDoctors_MKA.ColumnCount; j++)
+                {
+                    var serchEl = dataGridViewDoctors_MKA.Rows[i].Cells[j].Value?.ToString()?.ToLower();
+                    if (serchEl != null)
+                    {
+                        if (serchEl.ToString().Contains(textBoxSearch_MKA.Text))
+                        {
+                            dataGridViewDoctors_MKA.Rows[i].Selected = true;
+                            break;
+                        }
+                    }
+                }
+            }
+        }
+        string path = @"C:\Users\1\source\repos\Tyuiu.MedvedevKA.Sprint7\Tyuiu.MedvedevKA.Sprint7.Project.V6\bin\Debug\Doctors.csv";
+        private void столбецСрокПотериТрудоспособностиToolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+            string[,] mx = ds.GetMatrix(path);
+            string[,] mxsort = ds.AscendingSort(mx, 4);
+            for (int i = 0; i < rows; i++)
+            {
+                for (int j = 0; j < columns; j++)
+                {
+                    dataGridViewDoctors_MKA.Rows[i].Cells[j].Value = mxsort[i, j];
+                }
+            }
+        }
+
+        private void столбецСрокПотериТрудоспособностиToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            string[,] mx = ds.GetMatrix(path);
+            string[,] mxsort = ds.DescendingSort(mx, 4);
+            for (int i = 0; i < rows; i++)
+            {
+                for (int j = 0; j < columns; j++)
+                {
+                    dataGridViewDoctors_MKA.Rows[i].Cells[j].Value = mxsort[i, j];
+                }
+            } 
+        }
+
+        private void buttonMax_MKA_Click(object sender, EventArgs e)
+        {
+            int Column = 1;
+            int maxValue = int.MaxValue;
+            if (comboBoxMax_MKA.SelectedItem.ToString() == "Срок потери трудоспособности")
+            {
+                foreach (DataGridViewRow row in dataGridViewDoctors_MKA.Rows)
+                {
+                    if (row.Cells[Column].Value != null)
+                    {
+                        if (int.TryParse(row.Cells[Column].Value.ToString(), out int cellValue))
+                        {
+                            maxValue = Math.Max(maxValue, cellValue);
+                        }
+                    }
+                }
+            }
+            textBoxMax_MKA.Text = maxValue.ToString();
+        }
+
+        private void buttonAverage_MKA_Click(object sender, EventArgs e)
+        {
+            int Column = 1;
+            int sum = 0;
+            int count = 0;
+            if (comboBoxAverage_MKA.SelectedItem?.ToString() == "Срок потери трудоспособности")
+            {
+                foreach (DataGridViewRow row in dataGridViewDoctors_MKA.Rows)
+                {
+                    if (row.Cells[Column].Value != null)
+                    {
+                        if (int.TryParse(row.Cells[Column].Value.ToString(), out int cellValue))
+                        {
+                            sum += cellValue;
+                            count++;
+                        }
+                    }
+                }
+            }
+            if (count > 0)
+            {
+                double sr = Math.Round((double)sum / count, 3);
+                textBoxAverage_MKA.Text = sr.ToString();
+            }
+        }
+
+        private void buttonMin_MKA_Click(object sender, EventArgs e)
+        {
+            int Column = 1;
+            int minValue = int.MinValue;
+            if (comboBoxMax_MKA.SelectedItem.ToString() == "Срок потери трудоспособности")
+            {
+                foreach (DataGridViewRow row in dataGridViewDoctors_MKA.Rows)
+                {
+                    if (row.Cells[Column].Value != null)
+                    {
+                        if (int.TryParse(row.Cells[Column].Value.ToString(), out int cellValue))
+                        {
+                            minValue = Math.Max(minValue, cellValue);
+                        }
+                    }
+                }
+            }
+            textBoxMin_MKA.Text = minValue.ToString();
+        }
+
+        private void buttonFunction_MKA_Click(object sender, EventArgs e)
+        {
+            FormSheduleDoctors formSheduleDoctors = new FormSheduleDoctors();
+            formSheduleDoctors.ShowDialog();
         }
     }
 }
