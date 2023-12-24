@@ -233,8 +233,7 @@ namespace Tyuiu.MedvedevKA.Sprint7.Project.V6
 
         private void buttonFunction_MKA_Click(object sender, EventArgs e)
         {
-            FormShedulePatients formShedulePatients = new FormShedulePatients();
-            formShedulePatients.ShowDialog();
+            
         }
     }
 }
