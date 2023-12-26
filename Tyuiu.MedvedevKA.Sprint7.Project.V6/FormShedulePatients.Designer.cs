@@ -1,7 +1,7 @@
 ﻿
 namespace Tyuiu.MedvedevKA.Sprint7.Project.V6
 {
-    partial class FormGuide
+    partial class FormShedulePatients
     {
         /// <summary>
         /// Required designer variable.
@@ -29,17 +29,10 @@ namespace Tyuiu.MedvedevKA.Sprint7.Project.V6
         /// </summary>
         private void InitializeComponent()
         {
-            this.SuspendLayout();
-            // 
-            // FormGuide
-            // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.components = new System.ComponentModel.Container();
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Name = "FormGuide";
-            this.Text = "Руководство";
-            this.ResumeLayout(false);
-
+            this.Text = "FormShedulePatients";
         }
 
         #endregion

@@ -1,7 +1,7 @@
 ﻿
 namespace Tyuiu.MedvedevKA.Sprint7.Project.V6
 {
-    partial class FormGuide
+    partial class FormSheduleDoctors
     {
         /// <summary>
         /// Required designer variable.
@@ -29,19 +29,26 @@ namespace Tyuiu.MedvedevKA.Sprint7.Project.V6
         /// </summary>
         private void InitializeComponent()
         {
+            this.openFileDialog_MKA = new System.Windows.Forms.OpenFileDialog();
             this.SuspendLayout();
             // 
-            // FormGuide
+            // openFileDialog_MKA
+            // 
+            this.openFileDialog_MKA.FileName = "openFileDialog1";
+            // 
+            // FormSheduleDoctors
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Name = "FormGuide";
-            this.Text = "Руководство";
+            this.Name = "FormSheduleDoctors";
+            this.Text = "График Функции";
             this.ResumeLayout(false);
 
         }
 
         #endregion
+
+        private System.Windows.Forms.OpenFileDialog openFileDialog_MKA;
     }
 }
