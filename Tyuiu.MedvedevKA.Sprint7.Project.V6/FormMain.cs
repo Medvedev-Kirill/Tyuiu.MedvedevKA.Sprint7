@@ -34,5 +34,11 @@ namespace Tyuiu.MedvedevKA.Sprint7.Project.V6
             FormDoctors formDoctors = new FormDoctors();
             formDoctors.ShowDialog();
         }
+
+        private void buttonInfo_MKA_Click(object sender, EventArgs e)
+        {
+            FormGuide formGuide = new FormGuide();
+            formGuide.ShowDialog();
+        }
     }
 }

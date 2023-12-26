@@ -16,5 +16,10 @@ namespace Tyuiu.MedvedevKA.Sprint7.Project.V6
         {
             InitializeComponent();
         }
+
+        private void buttonOK_MKA_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
     }
 }

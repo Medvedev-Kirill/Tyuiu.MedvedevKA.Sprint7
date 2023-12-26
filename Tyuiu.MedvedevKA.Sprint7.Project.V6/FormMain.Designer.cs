@@ -69,6 +69,7 @@ namespace Tyuiu.MedvedevKA.Sprint7.Project.V6
             this.buttonInfo_MKA.TabIndex = 1;
             this.toolTip_MKA.SetToolTip(this.buttonInfo_MKA, "Руководство");
             this.buttonInfo_MKA.UseVisualStyleBackColor = true;
+            this.buttonInfo_MKA.Click += new System.EventHandler(this.buttonInfo_MKA_Click);
             // 
             // panelBot_MKA
             // 
@@ -153,6 +154,8 @@ namespace Tyuiu.MedvedevKA.Sprint7.Project.V6
             this.Controls.Add(this.panelDoctors_MKA);
             this.Controls.Add(this.panelPatients_MKA);
             this.Controls.Add(this.panelBot_MKA);
+            this.MaximizeBox = false;
+            this.MinimizeBox = false;
             this.Name = "FormMain";
             this.Text = "Поликлиника";
             this.panelBot_MKA.ResumeLayout(false);
