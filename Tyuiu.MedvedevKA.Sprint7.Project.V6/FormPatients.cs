@@ -9,6 +9,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.IO;
 using Tyuiu.MedvedevKA.Sprint7.Project.V6.Lib;
+using System.Windows.Forms.DataVisualization.Charting;
 
 namespace Tyuiu.MedvedevKA.Sprint7.Project.V6
 {
@@ -233,7 +234,31 @@ namespace Tyuiu.MedvedevKA.Sprint7.Project.V6
 
         private void buttonFunction_MKA_Click(object sender, EventArgs e)
         {
-            
+            if (dataGridViewPactients_MKA.RowCount > 0)
+            {
+                chartFunction_MKA.Series.Clear();
+
+                // Добавление серии для второго столбца (текст)
+                Series series2 = chartFunction_MKA.Series.Add("Фамилия");
+                series2.ChartType = SeriesChartType.Line;
+
+                // Добавление серии для пятого столбца (текст и числа)
+                Series series5 = chartFunction_MKA.Series.Add("Срок потери трудоспособности");
+                series5.ChartType = SeriesChartType.Line;
+
+                for (int i = 0; i < dataGridViewPactients_MKA.RowCount; i++)
+                {
+                    // Добавление точек в первую серию (первый столбец)
+                    series2.Points.AddXY(i, dataGridViewPactients_MKA.Rows[i].Cells[1].Value);
+
+                    // Добавление точек в пятую серию (пятый столбец)
+                    series5.Points.AddXY(i, dataGridViewPactients_MKA.Rows[i].Cells[4].Value);
+                }
+            }
+            else
+            {
+                MessageBox.Show("Таблица пуста!","Ошибка", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
     }
 }
