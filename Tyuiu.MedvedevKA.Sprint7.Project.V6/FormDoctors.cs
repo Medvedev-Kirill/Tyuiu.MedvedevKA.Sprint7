@@ -119,16 +119,16 @@ namespace Tyuiu.MedvedevKA.Sprint7.Project.V6
 
         private void buttonSearch_MKA_Click(object sender, EventArgs e)
         {
-            string serchValue = textBoxSearch_MKA.Text.ToLower();
+            string searchValue = textBoxSearch_MKA.Text.ToLower();
             for (int i = 0; i < dataGridViewDoctors_MKA.RowCount; i++)
             {
                 dataGridViewDoctors_MKA.Rows[i].Selected = false;
                 for (int j = 0; j < dataGridViewDoctors_MKA.ColumnCount; j++)
                 {
-                    var serchEl = dataGridViewDoctors_MKA.Rows[i].Cells[j].Value?.ToString()?.ToLower();
-                    if (serchEl != null)
+                    var searchCell = dataGridViewDoctors_MKA.Rows[i].Cells[j].Value?.ToString()?.ToLower();
+                    if (searchCell != null)
                     {
-                        if (serchEl.ToString().Contains(textBoxSearch_MKA.Text))
+                        if (searchCell.Contains(searchValue))
                         {
                             dataGridViewDoctors_MKA.Rows[i].Selected = true;
                             break;
