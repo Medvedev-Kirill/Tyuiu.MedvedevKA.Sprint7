@@ -31,9 +31,9 @@ namespace Tyuiu.MedvedevKA.Sprint7.Project.V6
         {
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormPatients));
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea1 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Legend legend1 = new System.Windows.Forms.DataVisualization.Charting.Legend();
-            System.Windows.Forms.DataVisualization.Charting.Series series1 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea4 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend4 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series4 = new System.Windows.Forms.DataVisualization.Charting.Series();
             this.panelLeft_MKA = new System.Windows.Forms.Panel();
             this.groupBoxTool_MKA = new System.Windows.Forms.GroupBox();
             this.buttonFunction_MKA = new System.Windows.Forms.Button();
@@ -42,41 +42,38 @@ namespace Tyuiu.MedvedevKA.Sprint7.Project.V6
             this.buttonOpenFile_MKA = new System.Windows.Forms.Button();
             this.buttonFiltre_MKA = new System.Windows.Forms.Button();
             this.panelData_MKA = new System.Windows.Forms.Panel();
+            this.groupBoxFunction_MKA = new System.Windows.Forms.GroupBox();
+            this.chartFunction_MKA = new System.Windows.Forms.DataVisualization.Charting.Chart();
             this.groupBoxOriginal_MKA = new System.Windows.Forms.GroupBox();
             this.dataGridViewPactients_MKA = new System.Windows.Forms.DataGridView();
             this.menuStrip_MKA = new System.Windows.Forms.MenuStrip();
             this.поВозрастаниюToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.столбецНомерToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.столбецСрокПотериТрудоспособностиToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.поУбываниюToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.столбецНомерToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
+            this.столбецСрокПотериТрудоспособностиToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.openFileDialog_MKA = new System.Windows.Forms.OpenFileDialog();
             this.toolTip_MKA = new System.Windows.Forms.ToolTip(this.components);
             this.buttonSearch_MKA = new System.Windows.Forms.Button();
-            this.buttonMax_MKA = new System.Windows.Forms.Button();
             this.buttonAverage_MKA = new System.Windows.Forms.Button();
-            this.buttonMin_MKA = new System.Windows.Forms.Button();
             this.saveFileDialog_MKA = new System.Windows.Forms.SaveFileDialog();
             this.panelTop_MKA = new System.Windows.Forms.Panel();
             this.groupBoxSearch_MKA = new System.Windows.Forms.GroupBox();
             this.textBoxSearch_MKA = new System.Windows.Forms.TextBox();
             this.groupBoxElement_MKA = new System.Windows.Forms.GroupBox();
             this.textBoxMin_MKA = new System.Windows.Forms.TextBox();
-            this.comboBoxMin_MKA = new System.Windows.Forms.ComboBox();
             this.labelMin_MKA = new System.Windows.Forms.Label();
             this.textBoxAverage_MKA = new System.Windows.Forms.TextBox();
-            this.comboBoxAverage_MKA = new System.Windows.Forms.ComboBox();
             this.labelAverage_MKA = new System.Windows.Forms.Label();
             this.labelMax_MKA = new System.Windows.Forms.Label();
             this.textBoxMax_MKA = new System.Windows.Forms.TextBox();
-            this.comboBoxMax_MKA = new System.Windows.Forms.ComboBox();
             this.groupBoxFiltre_MKA = new System.Windows.Forms.GroupBox();
             this.textBoxParametr_MKA = new System.Windows.Forms.TextBox();
             this.labelParametr_MKA = new System.Windows.Forms.Label();
-            this.groupBoxFunction_MKA = new System.Windows.Forms.GroupBox();
-            this.chartFunction_MKA = new System.Windows.Forms.DataVisualization.Charting.Chart();
             this.panelLeft_MKA.SuspendLayout();
             this.groupBoxTool_MKA.SuspendLayout();
             this.panelData_MKA.SuspendLayout();
+            this.groupBoxFunction_MKA.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.chartFunction_MKA)).BeginInit();
             this.groupBoxOriginal_MKA.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewPactients_MKA)).BeginInit();
             this.menuStrip_MKA.SuspendLayout();
@@ -84,8 +81,6 @@ namespace Tyuiu.MedvedevKA.Sprint7.Project.V6
             this.groupBoxSearch_MKA.SuspendLayout();
             this.groupBoxElement_MKA.SuspendLayout();
             this.groupBoxFiltre_MKA.SuspendLayout();
-            this.groupBoxFunction_MKA.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.chartFunction_MKA)).BeginInit();
             this.SuspendLayout();
             // 
             // panelLeft_MKA
@@ -173,7 +168,7 @@ namespace Tyuiu.MedvedevKA.Sprint7.Project.V6
             this.buttonFiltre_MKA.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.buttonFiltre_MKA.Location = new System.Drawing.Point(128, 60);
             this.buttonFiltre_MKA.Name = "buttonFiltre_MKA";
-            this.buttonFiltre_MKA.Size = new System.Drawing.Size(125, 40);
+            this.buttonFiltre_MKA.Size = new System.Drawing.Size(125, 38);
             this.buttonFiltre_MKA.TabIndex = 4;
             this.buttonFiltre_MKA.Text = "Отфильтровать";
             this.toolTip_MKA.SetToolTip(this.buttonFiltre_MKA, "Делает фильтрацию");
@@ -190,6 +185,32 @@ namespace Tyuiu.MedvedevKA.Sprint7.Project.V6
             this.panelData_MKA.Name = "panelData_MKA";
             this.panelData_MKA.Size = new System.Drawing.Size(1037, 426);
             this.panelData_MKA.TabIndex = 1;
+            // 
+            // groupBoxFunction_MKA
+            // 
+            this.groupBoxFunction_MKA.Controls.Add(this.chartFunction_MKA);
+            this.groupBoxFunction_MKA.Location = new System.Drawing.Point(603, 22);
+            this.groupBoxFunction_MKA.Name = "groupBoxFunction_MKA";
+            this.groupBoxFunction_MKA.Size = new System.Drawing.Size(429, 398);
+            this.groupBoxFunction_MKA.TabIndex = 2;
+            this.groupBoxFunction_MKA.TabStop = false;
+            this.groupBoxFunction_MKA.Text = "Функция:";
+            // 
+            // chartFunction_MKA
+            // 
+            chartArea4.Name = "ChartArea1";
+            this.chartFunction_MKA.ChartAreas.Add(chartArea4);
+            this.chartFunction_MKA.Dock = System.Windows.Forms.DockStyle.Fill;
+            legend4.Name = "Legend1";
+            this.chartFunction_MKA.Legends.Add(legend4);
+            this.chartFunction_MKA.Location = new System.Drawing.Point(3, 16);
+            this.chartFunction_MKA.Name = "chartFunction_MKA";
+            series4.ChartArea = "ChartArea1";
+            series4.Legend = "Legend1";
+            series4.Name = "Series1";
+            this.chartFunction_MKA.Series.Add(series4);
+            this.chartFunction_MKA.Size = new System.Drawing.Size(423, 379);
+            this.chartFunction_MKA.TabIndex = 0;
             // 
             // groupBoxOriginal_MKA
             // 
@@ -226,32 +247,32 @@ namespace Tyuiu.MedvedevKA.Sprint7.Project.V6
             // поВозрастаниюToolStripMenuItem
             // 
             this.поВозрастаниюToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.столбецНомерToolStripMenuItem});
+            this.столбецСрокПотериТрудоспособностиToolStripMenuItem});
             this.поВозрастаниюToolStripMenuItem.Name = "поВозрастаниюToolStripMenuItem";
             this.поВозрастаниюToolStripMenuItem.Size = new System.Drawing.Size(110, 20);
             this.поВозрастаниюToolStripMenuItem.Text = "По возрастанию";
             // 
-            // столбецНомерToolStripMenuItem
+            // столбецСрокПотериТрудоспособностиToolStripMenuItem
             // 
-            this.столбецНомерToolStripMenuItem.Name = "столбецНомерToolStripMenuItem";
-            this.столбецНомерToolStripMenuItem.Size = new System.Drawing.Size(172, 22);
-            this.столбецНомерToolStripMenuItem.Text = "Столбец \"Номер\"";
-            this.столбецНомерToolStripMenuItem.Click += new System.EventHandler(this.столбецНомерToolStripMenuItem_Click);
+            this.столбецСрокПотериТрудоспособностиToolStripMenuItem.Name = "столбецСрокПотериТрудоспособностиToolStripMenuItem";
+            this.столбецСрокПотериТрудоспособностиToolStripMenuItem.Size = new System.Drawing.Size(310, 22);
+            this.столбецСрокПотериТрудоспособностиToolStripMenuItem.Text = "Столбец “Срок потери трудоспособности”";
+            this.столбецСрокПотериТрудоспособностиToolStripMenuItem.Click += new System.EventHandler(this.столбецСрокПотериТрудоспособностиToolStripMenuItem_Click);
             // 
             // поУбываниюToolStripMenuItem
             // 
             this.поУбываниюToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.столбецНомерToolStripMenuItem1});
+            this.столбецСрокПотериТрудоспособностиToolStripMenuItem1});
             this.поУбываниюToolStripMenuItem.Name = "поУбываниюToolStripMenuItem";
             this.поУбываниюToolStripMenuItem.Size = new System.Drawing.Size(96, 20);
             this.поУбываниюToolStripMenuItem.Text = "По убыванию";
             // 
-            // столбецНомерToolStripMenuItem1
+            // столбецСрокПотериТрудоспособностиToolStripMenuItem1
             // 
-            this.столбецНомерToolStripMenuItem1.Name = "столбецНомерToolStripMenuItem1";
-            this.столбецНомерToolStripMenuItem1.Size = new System.Drawing.Size(172, 22);
-            this.столбецНомерToolStripMenuItem1.Text = "Столбец \"Номер\"";
-            this.столбецНомерToolStripMenuItem1.Click += new System.EventHandler(this.столбецНомерToolStripMenuItem1_Click);
+            this.столбецСрокПотериТрудоспособностиToolStripMenuItem1.Name = "столбецСрокПотериТрудоспособностиToolStripMenuItem1";
+            this.столбецСрокПотериТрудоспособностиToolStripMenuItem1.Size = new System.Drawing.Size(310, 22);
+            this.столбецСрокПотериТрудоспособностиToolStripMenuItem1.Text = "Столбец “Срок потери трудоспособности”";
+            this.столбецСрокПотериТрудоспособностиToolStripMenuItem1.Click += new System.EventHandler(this.столбецСрокПотериТрудоспособностиToolStripMenuItem1_Click);
             // 
             // openFileDialog_MKA
             // 
@@ -274,38 +295,16 @@ namespace Tyuiu.MedvedevKA.Sprint7.Project.V6
             this.buttonSearch_MKA.UseVisualStyleBackColor = true;
             this.buttonSearch_MKA.Click += new System.EventHandler(this.buttonSearch_MKA_Click);
             // 
-            // buttonMax_MKA
-            // 
-            this.buttonMax_MKA.Location = new System.Drawing.Point(9, 58);
-            this.buttonMax_MKA.Name = "buttonMax_MKA";
-            this.buttonMax_MKA.Size = new System.Drawing.Size(95, 23);
-            this.buttonMax_MKA.TabIndex = 7;
-            this.buttonMax_MKA.Text = "Выполнить";
-            this.toolTip_MKA.SetToolTip(this.buttonMax_MKA, "Находит максимальное значение");
-            this.buttonMax_MKA.UseVisualStyleBackColor = true;
-            this.buttonMax_MKA.Click += new System.EventHandler(this.buttonMax_MKA_Click);
-            // 
             // buttonAverage_MKA
             // 
-            this.buttonAverage_MKA.Location = new System.Drawing.Point(203, 58);
+            this.buttonAverage_MKA.Location = new System.Drawing.Point(9, 60);
             this.buttonAverage_MKA.Name = "buttonAverage_MKA";
-            this.buttonAverage_MKA.Size = new System.Drawing.Size(90, 23);
+            this.buttonAverage_MKA.Size = new System.Drawing.Size(537, 38);
             this.buttonAverage_MKA.TabIndex = 14;
             this.buttonAverage_MKA.Text = "Выполнить";
             this.toolTip_MKA.SetToolTip(this.buttonAverage_MKA, "Находит среднее значение");
             this.buttonAverage_MKA.UseVisualStyleBackColor = true;
-            this.buttonAverage_MKA.Click += new System.EventHandler(this.buttonAverage_MKA_Click);
-            // 
-            // buttonMin_MKA
-            // 
-            this.buttonMin_MKA.Location = new System.Drawing.Point(373, 58);
-            this.buttonMin_MKA.Name = "buttonMin_MKA";
-            this.buttonMin_MKA.Size = new System.Drawing.Size(90, 23);
-            this.buttonMin_MKA.TabIndex = 18;
-            this.buttonMin_MKA.Text = "Выполнить";
-            this.toolTip_MKA.SetToolTip(this.buttonMin_MKA, "Находит минимальное значение");
-            this.buttonMin_MKA.UseVisualStyleBackColor = true;
-            this.buttonMin_MKA.Click += new System.EventHandler(this.buttonMin_MKA_Click);
+            this.buttonAverage_MKA.Click += new System.EventHandler(this.buttonCalculate_MKA_Click);
             // 
             // panelTop_MKA
             // 
@@ -340,41 +339,26 @@ namespace Tyuiu.MedvedevKA.Sprint7.Project.V6
             // groupBoxElement_MKA
             // 
             this.groupBoxElement_MKA.Controls.Add(this.textBoxMin_MKA);
-            this.groupBoxElement_MKA.Controls.Add(this.buttonMin_MKA);
-            this.groupBoxElement_MKA.Controls.Add(this.comboBoxMin_MKA);
             this.groupBoxElement_MKA.Controls.Add(this.labelMin_MKA);
             this.groupBoxElement_MKA.Controls.Add(this.textBoxAverage_MKA);
             this.groupBoxElement_MKA.Controls.Add(this.buttonAverage_MKA);
-            this.groupBoxElement_MKA.Controls.Add(this.comboBoxAverage_MKA);
             this.groupBoxElement_MKA.Controls.Add(this.labelAverage_MKA);
             this.groupBoxElement_MKA.Controls.Add(this.labelMax_MKA);
             this.groupBoxElement_MKA.Controls.Add(this.textBoxMax_MKA);
-            this.groupBoxElement_MKA.Controls.Add(this.buttonMax_MKA);
-            this.groupBoxElement_MKA.Controls.Add(this.comboBoxMax_MKA);
             this.groupBoxElement_MKA.Font = new System.Drawing.Font("Times New Roman", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBoxElement_MKA.Location = new System.Drawing.Point(273, 4);
             this.groupBoxElement_MKA.Name = "groupBoxElement_MKA";
             this.groupBoxElement_MKA.Size = new System.Drawing.Size(552, 108);
             this.groupBoxElement_MKA.TabIndex = 1;
             this.groupBoxElement_MKA.TabStop = false;
-            this.groupBoxElement_MKA.Text = "Элементы статистики:";
+            this.groupBoxElement_MKA.Text = "Элементы статистики \"Срок потери трудоспособности\":";
             // 
             // textBoxMin_MKA
             // 
-            this.textBoxMin_MKA.Location = new System.Drawing.Point(373, 85);
+            this.textBoxMin_MKA.Location = new System.Drawing.Point(373, 32);
             this.textBoxMin_MKA.Name = "textBoxMin_MKA";
             this.textBoxMin_MKA.Size = new System.Drawing.Size(121, 22);
             this.textBoxMin_MKA.TabIndex = 19;
-            // 
-            // comboBoxMin_MKA
-            // 
-            this.comboBoxMin_MKA.FormattingEnabled = true;
-            this.comboBoxMin_MKA.Items.AddRange(new object[] {
-            "Номер"});
-            this.comboBoxMin_MKA.Location = new System.Drawing.Point(373, 32);
-            this.comboBoxMin_MKA.Name = "comboBoxMin_MKA";
-            this.comboBoxMin_MKA.Size = new System.Drawing.Size(121, 23);
-            this.comboBoxMin_MKA.TabIndex = 17;
             // 
             // labelMin_MKA
             // 
@@ -387,20 +371,10 @@ namespace Tyuiu.MedvedevKA.Sprint7.Project.V6
             // 
             // textBoxAverage_MKA
             // 
-            this.textBoxAverage_MKA.Location = new System.Drawing.Point(203, 84);
+            this.textBoxAverage_MKA.Location = new System.Drawing.Point(203, 32);
             this.textBoxAverage_MKA.Name = "textBoxAverage_MKA";
             this.textBoxAverage_MKA.Size = new System.Drawing.Size(121, 22);
             this.textBoxAverage_MKA.TabIndex = 15;
-            // 
-            // comboBoxAverage_MKA
-            // 
-            this.comboBoxAverage_MKA.FormattingEnabled = true;
-            this.comboBoxAverage_MKA.Items.AddRange(new object[] {
-            "Номер"});
-            this.comboBoxAverage_MKA.Location = new System.Drawing.Point(203, 31);
-            this.comboBoxAverage_MKA.Name = "comboBoxAverage_MKA";
-            this.comboBoxAverage_MKA.Size = new System.Drawing.Size(121, 23);
-            this.comboBoxAverage_MKA.TabIndex = 13;
             // 
             // labelAverage_MKA
             // 
@@ -422,20 +396,10 @@ namespace Tyuiu.MedvedevKA.Sprint7.Project.V6
             // 
             // textBoxMax_MKA
             // 
-            this.textBoxMax_MKA.Location = new System.Drawing.Point(9, 84);
+            this.textBoxMax_MKA.Location = new System.Drawing.Point(9, 32);
             this.textBoxMax_MKA.Name = "textBoxMax_MKA";
             this.textBoxMax_MKA.Size = new System.Drawing.Size(121, 22);
             this.textBoxMax_MKA.TabIndex = 10;
-            // 
-            // comboBoxMax_MKA
-            // 
-            this.comboBoxMax_MKA.FormattingEnabled = true;
-            this.comboBoxMax_MKA.Items.AddRange(new object[] {
-            "Номер"});
-            this.comboBoxMax_MKA.Location = new System.Drawing.Point(9, 31);
-            this.comboBoxMax_MKA.Name = "comboBoxMax_MKA";
-            this.comboBoxMax_MKA.Size = new System.Drawing.Size(121, 23);
-            this.comboBoxMax_MKA.TabIndex = 2;
             // 
             // groupBoxFiltre_MKA
             // 
@@ -466,32 +430,6 @@ namespace Tyuiu.MedvedevKA.Sprint7.Project.V6
             this.labelParametr_MKA.TabIndex = 5;
             this.labelParametr_MKA.Text = "Параметр:";
             // 
-            // groupBoxFunction_MKA
-            // 
-            this.groupBoxFunction_MKA.Controls.Add(this.chartFunction_MKA);
-            this.groupBoxFunction_MKA.Location = new System.Drawing.Point(603, 22);
-            this.groupBoxFunction_MKA.Name = "groupBoxFunction_MKA";
-            this.groupBoxFunction_MKA.Size = new System.Drawing.Size(429, 398);
-            this.groupBoxFunction_MKA.TabIndex = 2;
-            this.groupBoxFunction_MKA.TabStop = false;
-            this.groupBoxFunction_MKA.Text = "Функция:";
-            // 
-            // chartFunction_MKA
-            // 
-            chartArea1.Name = "ChartArea1";
-            this.chartFunction_MKA.ChartAreas.Add(chartArea1);
-            this.chartFunction_MKA.Dock = System.Windows.Forms.DockStyle.Fill;
-            legend1.Name = "Legend1";
-            this.chartFunction_MKA.Legends.Add(legend1);
-            this.chartFunction_MKA.Location = new System.Drawing.Point(3, 16);
-            this.chartFunction_MKA.Name = "chartFunction_MKA";
-            series1.ChartArea = "ChartArea1";
-            series1.Legend = "Legend1";
-            series1.Name = "Series1";
-            this.chartFunction_MKA.Series.Add(series1);
-            this.chartFunction_MKA.Size = new System.Drawing.Size(423, 379);
-            this.chartFunction_MKA.TabIndex = 0;
-            // 
             // FormPatients
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -507,6 +445,8 @@ namespace Tyuiu.MedvedevKA.Sprint7.Project.V6
             this.groupBoxTool_MKA.ResumeLayout(false);
             this.panelData_MKA.ResumeLayout(false);
             this.panelData_MKA.PerformLayout();
+            this.groupBoxFunction_MKA.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.chartFunction_MKA)).EndInit();
             this.groupBoxOriginal_MKA.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewPactients_MKA)).EndInit();
             this.menuStrip_MKA.ResumeLayout(false);
@@ -518,8 +458,6 @@ namespace Tyuiu.MedvedevKA.Sprint7.Project.V6
             this.groupBoxElement_MKA.PerformLayout();
             this.groupBoxFiltre_MKA.ResumeLayout(false);
             this.groupBoxFiltre_MKA.PerformLayout();
-            this.groupBoxFunction_MKA.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.chartFunction_MKA)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -547,24 +485,19 @@ namespace Tyuiu.MedvedevKA.Sprint7.Project.V6
         private System.Windows.Forms.GroupBox groupBoxSearch_MKA;
         private System.Windows.Forms.Button buttonSearch_MKA;
         private System.Windows.Forms.TextBox textBoxSearch_MKA;
-        private System.Windows.Forms.ComboBox comboBoxMax_MKA;
-        private System.Windows.Forms.Button buttonMax_MKA;
         private System.Windows.Forms.TextBox textBoxMax_MKA;
         private System.Windows.Forms.Label labelMax_MKA;
         private System.Windows.Forms.Label labelAverage_MKA;
-        private System.Windows.Forms.ComboBox comboBoxAverage_MKA;
         private System.Windows.Forms.Button buttonAverage_MKA;
         private System.Windows.Forms.TextBox textBoxAverage_MKA;
         private System.Windows.Forms.Label labelMin_MKA;
-        private System.Windows.Forms.ComboBox comboBoxMin_MKA;
-        private System.Windows.Forms.Button buttonMin_MKA;
         private System.Windows.Forms.TextBox textBoxMin_MKA;
         private System.Windows.Forms.MenuStrip menuStrip_MKA;
         private System.Windows.Forms.ToolStripMenuItem поВозрастаниюToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem столбецНомерToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem поУбываниюToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem столбецНомерToolStripMenuItem1;
         private System.Windows.Forms.GroupBox groupBoxFunction_MKA;
         private System.Windows.Forms.DataVisualization.Charting.Chart chartFunction_MKA;
+        private System.Windows.Forms.ToolStripMenuItem столбецСрокПотериТрудоспособностиToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem столбецСрокПотериТрудоспособностиToolStripMenuItem1;
     }
 }
